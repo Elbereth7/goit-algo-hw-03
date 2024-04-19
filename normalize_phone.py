@@ -11,7 +11,7 @@ def normalize_phone(phone_number):
         elif not normalized_phone.startswith('38') and not normalized_phone.startswith('0'): 
             # Raise a ValueError in case if phone number is not Ukrainian
             raise ValueError(f'Phone number {phone_number} is not valid. Please enter your Ukrainian phone number')
-        if (len(normalized_phone) != 12 and normalized_phone.startswith('38')) or (len(normalized_phone) != 10 and normalized_phone.startswith('0')):
+        elif (len(normalized_phone) != 12 and normalized_phone.startswith('38')) or (len(normalized_phone) != 10 and normalized_phone.startswith('0')):
             # Raise a ValueError in case if phone number is too short / too long
             raise ValueError(f'Phone number {phone_number} is not valid. Please check the length of the phone number')
     except ValueError as ve: # In case phone number doesn't pass the value content validation
